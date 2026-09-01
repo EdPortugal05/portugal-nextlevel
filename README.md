@@ -1,4 +1,4 @@
-# 🎮 Game Library & Playtime Tracker
+# 🎮 Game Library & Playtime Tracker - Next Level
 
 A full-stack web app to track the games you play, log your playtime, mark
 progress (Backlog / Playing / Completed / Dropped), and rate games once
