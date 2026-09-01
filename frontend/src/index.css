@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #2f9bff;
+  --accent-dim: #2f9bff33;
+  --bg: #0a0a0a;
+  --panel: #131313;
+  --border: #2a2a2a;
+  --text: #ffffff;
+  --text-dim: #9aa0a6;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)),
+    url("/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 2rem;
+  background: rgba(10, 10, 10, 0.9);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-dim);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navbar-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+}
+
+.navbar-links a.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Layout */
+.main-content {
+  padding: 2.5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+/* Home */
+.home-page p {
+  color: var(--text-dim);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.home-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.7rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* Dashboard */
+.dashboard-stats {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-bar button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-bar button.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+}
+
+/* Game Card - styled like a "patch note" entry */
+.game-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.1rem;
+  position: relative;
+}
+
+.game-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.game-card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.status-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 3px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-platform {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin: 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  margin: 0.6rem 0;
+  color: var(--text);
+}
+
+.game-notes {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.game-card-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.game-card-actions select,
+.game-card-actions button {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.game-card-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.game-card-actions button.danger {
+  border-color: #e53935;
+  color: #e53935;
+}
+
+/* Form */
+.game-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 440px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.game-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  gap: 0.4rem;
+}
+
+.game-form input,
+.game-form select,
+.game-form textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.game-form input:focus,
+.game-form select:focus,
+.game-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.game-form button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.form-message {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.error {
+  color: #ef4444;
+}
+
+/* About */
+.about-page ul {
+  line-height: 2;
+  color: var(--text-dim);
+}
+
+.about-page strong {
+  color: var(--text);
+}
+
+.about-page h2 {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  color: var(--accent);
+}
